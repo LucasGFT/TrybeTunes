@@ -15,10 +15,10 @@ class Header extends React.Component {
 
   pegarUser = async () => {
     this.setState({ carregamento: true });
-    const ola = await getUser();
+    const objeto = await getUser();
     this.setState({
       carregamento: false,
-      usuario: ola });
+      usuario: objeto });
   };
 
   render() {
