@@ -2,8 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class MusicCard extends React.Component {
+  state = {
+    check: false,
+  };
+
   render() {
-    const { trackName, previewUrl, trackId, funcaoFavoritar, element } = this.props;
+    const { trackName, previewUrl, trackId,
+      funcaoFavoritar, element, funcaoPegarFavoritas, checked } = this.props;
+    const { check } = this.state;
     return (
       <div>
         <h5>{trackName}</h5>
@@ -20,9 +26,17 @@ class MusicCard extends React.Component {
             type="checkbox"
             id={ trackId }
             data-testid={ `checkbox-music-${trackId}` }
-            onClick={ async () => {
-              await funcaoFavoritar(element);
+            onChange={ async () => {
+              if (!check) {
+                await funcaoFavoritar(element);
+                await funcaoPegarFavoritas();
+                this.setState({ check: true });
+              } else {
+                this.setState({ check: false });
+                console.log('ja tava marcado');
+              }
             } }
+            checked={ checked }
           />
           Favorita
         </label>
@@ -37,6 +51,8 @@ MusicCard.propTypes = {
   trackId: PropTypes.number.isRequired,
   funcaoFavoritar: PropTypes.func.isRequired,
   element: PropTypes.shape().isRequired,
+  funcaoPegarFavoritas: PropTypes.func.isRequired,
+  checked: PropTypes.bool.isRequired,
 };
 
 export default MusicCard;

@@ -3,17 +3,19 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Carregando from '../components/Carregando';
 
 class Album extends React.Component {
   state = {
     objArtista: [],
     carregando: false,
+    musicasFavoritas: [],
   };
 
   componentDidMount() {
     this.getMusica();
+    this.pegarMusicasFavoritas();
   }
 
   getMusica = async () => {
@@ -23,6 +25,12 @@ class Album extends React.Component {
     this.setState({ objArtista: Musica });
   };
 
+  pegarMusicasFavoritas = async () => {
+    this.setState({ carregando: true });
+    const musica = await getFavoriteSongs();
+    this.setState({ carregando: false, musicasFavoritas: musica });
+  };
+
   adicionarFavoritos = async (obj) => {
     this.setState({ carregando: true });
     await addSong(obj);
@@ -30,7 +38,7 @@ class Album extends React.Component {
   };
 
   render() {
-    const { objArtista, carregando } = this.state;
+    const { objArtista, carregando, musicasFavoritas } = this.state;
     return (
       <div data-testid="page-album">
         {/* Eu fiz o requisito: Exiba o nome da banda ou artista na tela.
@@ -57,6 +65,10 @@ class Album extends React.Component {
                   trackId={ element.trackId }
                   funcaoFavoritar={ this.adicionarFavoritos }
                   element={ element }
+                  funcaoPegarFavoritas={ this.pegarMusicasFavoritas }
+                  checked={
+                    musicasFavoritas.some((e) => e.trackId === element.trackId)
+                  }
                 />))}
             </div>
           </div>
