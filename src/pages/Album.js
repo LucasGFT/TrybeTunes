@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong } from '../services/favoriteSongsAPI';
 import Carregando from '../components/Carregando';
 
 class Album extends React.Component {

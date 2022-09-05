@@ -35,6 +35,8 @@ MusicCard.propTypes = {
   trackName: PropTypes.string.isRequired,
   previewUrl: PropTypes.string.isRequired,
   trackId: PropTypes.number.isRequired,
+  funcaoFavoritar: PropTypes.func.isRequired,
+  element: PropTypes.shape().isRequired,
 };
 
 export default MusicCard;
