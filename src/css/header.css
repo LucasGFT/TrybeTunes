@@ -1,0 +1,167 @@
+body {
+  background-color: #191414;
+  color: white;
+}
+
+.titulo {
+  background-color: #191414;
+  color: #1db954;
+  display: flex;
+  font-size: 36px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+nav {
+  align-items: center;
+  background-color: #1db954;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  font-size: 18px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #191414;
+}
+
+nav div {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 40px;
+}
+
+.formPesquisaArtista input {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 18px;
+  height: 35px;
+  padding: 10px;
+  width: 50%;
+}
+
+.formLogin input {
+  background-color: white;
+  border: 1px solid gray;
+  font-size: 18px;
+  height: 25px;
+  padding: 10px;
+  width: 20%;
+}
+
+.formPesquisaArtista input:focus {
+  border-color: cornflowerblue;
+  outline: none;
+}
+
+.formLogin button {
+  background-color: #1db954;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  height: 40px;
+  width: 10%;
+}
+
+.formPesquisaArtista button {
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  height: 40px;
+  width: 10%;
+}
+
+.listaResultadoButton button {
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  height: 40px;
+  margin: 10px;
+  position: relative;
+  text-decoration: none;
+}
+
+.formPesquisaArtista button:hover {
+  background-color: blue;
+}
+
+.resultadoPesquisa {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultadoPesquisa h2 {
+  text-align: center;
+}
+
+.listaResultado {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.listaResultado div {
+  border: solid 1px #1db954;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 340px;
+  width: 310px;
+}
+
+.listaResultadoImg {
+  display: flex;
+  justify-content: center;
+}
+
+.listaResultadoButton {
+  display: flex;
+  justify-content: center;
+}
+
+.listaResultado div a {
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  height: 40px;
+  margin: 10px;
+  position: relative;
+  text-decoration: none;
+}
+
+.favorites {
+  display: flex;
+}
+
+.tituloFavorites {
+  display: flex;
+  justify-content: center;
+}

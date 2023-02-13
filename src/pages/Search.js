@@ -17,22 +17,26 @@ class Search extends React.Component {
 
   listarMusicas = () => {
     Lista = (
-      <div>
+      <div className="listaResultado">
         {AlbumArtista.length > 0 ? (
           AlbumArtista.map((element) => (
             <div key={ element.artworkUrl100 }>
-              <img src={ element.artworkUrl100 } alt={ element.artistName } />
+              <span className="listaResultadoImg">
+                <img src={ element.artworkUrl100 } alt={ element.artistName } />
+              </span>
               <h3>
-                {`Álbum ${element.trackCount}, Nome: ${element.collectionName}`}
+                {`Nome: ${element.collectionName}`}
               </h3>
               <h5>{`Artista ${element.artistName}`}</h5>
               <h5>{element.artistName}</h5>
-              <Link
-                to={ `/album/${element.collectionId}` }
-                data-testid={ `link-to-album-${element.collectionId}` }
-              >
-                Procurar Album
-              </Link>
+              <span className="listaResultadoButton">
+                <Link
+                  to={ `/album/${element.collectionId}` }
+                  data-testid={ `link-to-album-${element.collectionId}` }
+                >
+                  Procurar Album
+                </Link>
+              </span>
             </div>))
         ) : (<h1>Nenhum álbum foi encontrado</h1>)}
       </div>
@@ -68,32 +72,38 @@ class Search extends React.Component {
       <div data-testid="page-search">
         <Header />
         { carregando === true ? (<Carregando />) : (
-          <form>
-            <input
-              data-testid="search-artist-input"
-              onChange={ this.haveChange }
-              value={ nomeArtista }
-            />
-            <button
-              type="button"
-              disabled={ isDisableButton }
-              data-testid="search-artist-button"
-              onClick={ this.clickButton }
-            >
-              Pesquisar
-            </button>
-          </form>
+          <div className="formPesquisaArtista">
+            <form>
+              <input
+                placeholder="Nome do Artista:"
+                data-testid="search-artist-input"
+                onChange={ this.haveChange }
+                value={ nomeArtista }
+              />
+              <button
+                type="button"
+                disabled={ isDisableButton }
+                data-testid="search-artist-button"
+                onClick={ this.clickButton }
+              >
+                Pesquisar
+              </button>
+            </form>
+          </div>
         ) }
         {
           resposta
           && (
-            <h3>
-              Resultado de álbuns de:
-              {' '}
-              {nomeArt}
+            <div className="resultadoPesquisa">
+              <h2>
+                Álbuns de:
+                {' '}
+                {nomeArt}
+              </h2>
               <br />
               {Lista}
-            </h3>)
+            </div>
+          )
         }
       </div>
     );

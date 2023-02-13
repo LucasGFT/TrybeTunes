@@ -41,9 +41,9 @@ class Login extends React.Component {
     return (
       <div data-testid="page-login">
         { carregamento === true ? (<Carregando />) : (
-          <form>
+          <form className="formLogin">
             <label htmlFor="input-nome">
-              Nome:
+              <h2>Nome:</h2>
               <input
                 data-testid="login-name-input"
                 id="input-nome"

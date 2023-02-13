@@ -29,11 +29,33 @@ class Header extends React.Component {
           {carregamento === true ? (<Carregando />)
             : (
               <div>
-                <h3>Header</h3>
-                <h2 data-testid="header-user-name">{usuario.name}</h2>
-                <Link to="/search" data-testid="link-to-search">Search</Link>
-                <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>
-                <Link to="/profile" data-testid="link-to-profile">Profile</Link>
+                <h2 data-testid="header-user-name">
+                  Nome:
+                  {' '}
+                  {usuario.name}
+                </h2>
+                <nav>
+                  <ul className="nav">
+                    <li><Link to="/search" data-testid="link-to-search">Search</Link></li>
+                    <li>
+                      <Link
+                        to="/favorites"
+                        data-testid="link-to-favorites"
+                      >
+                        Favorites
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/profile"
+                        data-testid="link-to-profile"
+                      >
+                        Profile
+                      </Link>
+                    </li>
+                  </ul>
+                </nav>
+
               </div>
             )}
         </header>

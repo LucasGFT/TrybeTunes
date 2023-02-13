@@ -46,7 +46,6 @@ class Album extends React.Component {
         desde que ela tenha o atributo data-testid="artist-name".
          No Requisito 7, so continuar */}
         <Header />
-        Album
         {objArtista.length > 0 ? (
           <div>
             <h3 data-testid="artist-name">{objArtista[0].artistName}</h3>

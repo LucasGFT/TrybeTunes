@@ -33,7 +33,6 @@ class MusicCard extends React.Component {
                 this.setState({ check: true });
               } else {
                 this.setState({ check: false });
-                console.log('ja tava marcado');
               }
             } }
             checked={ checked }

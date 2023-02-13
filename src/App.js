@@ -7,12 +7,15 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
+import './css/header.css';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <p>TrybeTunes</p>
+        <div className="titulo">
+          <h1>TrybeTunes</h1>
+        </div>
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={ Login } />
