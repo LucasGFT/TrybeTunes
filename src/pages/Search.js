@@ -31,7 +31,7 @@ class Search extends React.Component {
               <h5>{element.artistName}</h5>
               <span className="listaResultadoButton">
                 <Link
-                  to={ `/album/${element.collectionId}` }
+                  to={ `/TrybeTunes/album/${element.collectionId}` }
                   data-testid={ `link-to-album-${element.collectionId}` }
                 >
                   Procurar Album

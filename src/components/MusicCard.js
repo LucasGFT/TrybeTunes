@@ -13,22 +13,25 @@ class MusicCard extends React.Component {
     return (
       <div>
         <h5>{trackName}</h5>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          {' '}
-          <code>audio</code>
-          .
-        </audio>
-        <button
-          type="button"
-          onClick={ async () => {
-            await funcaoFavoritar(element);
-            await funcaoPegarFavoritas();
-          } }
-        >
-          Favoritar
-        </button>
+        <div className="audioButton">
+          <audio data-testid="audio-component" src={ previewUrl } controls>
+            <track kind="captions" />
+            O seu navegador não suporta o elemento
+            {' '}
+            <code>audio</code>
+            .
+          </audio>
+          <button
+            type="button"
+            className="buttonVerMusicas"
+            onClick={ async () => {
+              await funcaoFavoritar(element);
+              await funcaoPegarFavoritas();
+            } }
+          >
+            Favoritar
+          </button>
+        </div>
       </div>
     );
   }

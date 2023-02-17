@@ -26,13 +26,13 @@ class Profile extends React.Component {
         <p>{`Você tem no total ${numeroDeMusicasFavoritas} musicas como favoritas`}</p>
         {numeroDeMusicasFavoritas > 0 ? (
           <button type="button" className="buttonVerMusicas">
-            <Link to="/favorites" className="linkFavoritesButton">
+            <Link to="/TrybeTunes/favorites" className="linkFavoritesButton">
               Ver Musicas
             </Link>
           </button>
         ) : (
           <button type="button" className="buttonVerMusicas">
-            <Link to="/search" className="linkFavoritesButton">
+            <Link to="/TrybeTunes/search" className="linkFavoritesButton">
               Adicionar Musicas
             </Link>
           </button>

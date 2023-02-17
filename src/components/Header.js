@@ -36,10 +36,18 @@ class Header extends React.Component {
                 </h2>
                 <nav>
                   <ul className="nav">
-                    <li><Link to="/search" data-testid="link-to-search">Search</Link></li>
                     <li>
                       <Link
-                        to="/favorites"
+                        to="/TrybeTunes/search"
+                        data-testid="link-to-search"
+                      >
+                        Search
+                      </Link>
+
+                    </li>
+                    <li>
+                      <Link
+                        to="/TrybeTunes/favorites"
                         data-testid="link-to-favorites"
                       >
                         Favorites
@@ -47,7 +55,7 @@ class Header extends React.Component {
                     </li>
                     <li>
                       <Link
-                        to="/profile"
+                        to="/TrybeTunes/profile"
                         data-testid="link-to-profile"
                       >
                         Profile

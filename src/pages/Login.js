@@ -62,7 +62,7 @@ class Login extends React.Component {
           </form>
         )}
         { carregamento === false && apertoButton === true ? (
-          <Redirect to="/search" />
+          <Redirect to="/TrybeTunes/search" />
         ) : null}
       </div>
     );

@@ -184,3 +184,8 @@ li {
 .buttonVerMusicas:hover {
   background-color: blue;
 }
+
+.audioButton {
+  align-items: center;
+  display: flex;
+}

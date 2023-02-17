@@ -7,7 +7,7 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
-import './css/header.css';
+import './css/Style.css';
 
 class App extends React.Component {
   render() {
@@ -18,12 +18,15 @@ class App extends React.Component {
         </div>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={ Login } />
-            <Route path="/search" component={ Search } />
-            <Route path="/album/:id" render={ (props) => <Album { ...props } /> } />
-            <Route path="/favorites" component={ Favorites } />
-            <Route exact path="/profile" component={ Profile } />
-            <Route path="/profile/edit" component={ ProfileEdit } />
+            <Route exact path="/TrybeTunes" component={ Login } />
+            <Route path="/TrybeTunes/search" component={ Search } />
+            <Route
+              path="/TrybeTunes/album/:id"
+              render={ (props) => <Album { ...props } /> }
+            />
+            <Route path="/TrybeTunes/favorites" component={ Favorites } />
+            <Route exact path="/TrybeTunes/profile" component={ Profile } />
+            <Route path="/TrybeTunes/profile/edit" component={ ProfileEdit } />
             <Route component={ NotFound } />
           </Switch>
         </BrowserRouter>
