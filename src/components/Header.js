@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Carregando from './Carregando';
+import Contact from './Contact';
 
 class Header extends React.Component {
   state = {
@@ -29,11 +30,14 @@ class Header extends React.Component {
           {carregamento === true ? (<Carregando />)
             : (
               <div>
-                <h2 data-testid="header-user-name">
-                  Nome:
-                  {' '}
-                  {usuario.name}
-                </h2>
+                <div className="nomeContact">
+                  <h2 data-testid="header-user-name">
+                    Nome:
+                    {' '}
+                    {usuario.name}
+                  </h2>
+                  <Contact />
+                </div>
                 <nav>
                   <ul className="nav">
                     <li>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Carregando from '../components/Carregando';
+import Contact from '../components/Contact';
 
 class Login extends React.Component {
   state = {
@@ -43,7 +44,10 @@ class Login extends React.Component {
         { carregamento === true ? (<Carregando />) : (
           <form className="formLogin">
             <label htmlFor="input-nome">
-              <h2>Nome:</h2>
+              <div className="nomeContact">
+                <h2>Nome:</h2>
+                <Contact />
+              </div>
               <input
                 data-testid="login-name-input"
                 id="input-nome"
