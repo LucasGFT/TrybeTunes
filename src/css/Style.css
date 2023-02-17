@@ -67,7 +67,7 @@ li {
 }
 
 .formPesquisaArtista input:focus {
-  border-color: cornflowerblue;
+  border-color: #1db954;
   outline: none;
 }
 
@@ -83,7 +83,7 @@ li {
 }
 
 .formPesquisaArtista button {
-  background-color: cornflowerblue;
+  background-color: #1db954;
   border: none;
   border-radius: 5px;
   color: white;
@@ -94,7 +94,7 @@ li {
 }
 
 .listaResultadoButton button {
-  background-color: cornflowerblue;
+  background-color: #1db954;
   border: none;
   border-radius: 5px;
   color: white;
@@ -107,7 +107,7 @@ li {
 }
 
 .formPesquisaArtista button:hover {
-  background-color: blue;
+  background-color: #16a749;
 }
 
 .resultadoPesquisa {
@@ -145,7 +145,7 @@ li {
 }
 
 .listaResultado div a {
-  background-color: cornflowerblue;
+  background-color: #1db954;
   border: none;
   border-radius: 5px;
   color: white;
@@ -167,7 +167,7 @@ li {
 }
 
 .buttonVerMusicas {
-  background-color: cornflowerblue;
+  background-color: #1db954;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -182,7 +182,7 @@ li {
 }
 
 .buttonVerMusicas:hover {
-  background-color: blue;
+  background-color: #16a749;
 }
 
 .audioButton {
