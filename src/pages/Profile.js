@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
@@ -22,7 +23,20 @@ class Profile extends React.Component {
     return (
       <div data-testid="page-profile">
         <Header />
-        <p>{`Você tem ${numeroDeMusicasFavoritas} musicas salvas em favoritas`}</p>
+        <p>{`Você tem no total ${numeroDeMusicasFavoritas} musicas como favoritas`}</p>
+        {numeroDeMusicasFavoritas > 0 ? (
+          <button type="button" className="buttonVerMusicas">
+            <Link to="/favorites" className="linkFavoritesButton">
+              Ver Musicas
+            </Link>
+          </button>
+        ) : (
+          <button type="button" className="buttonVerMusicas">
+            <Link to="/search" className="linkFavoritesButton">
+              Adicionar Musicas
+            </Link>
+          </button>
+        )}
       </div>
     );
   }

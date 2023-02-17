@@ -165,3 +165,22 @@ li {
   display: flex;
   justify-content: center;
 }
+
+.buttonVerMusicas {
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 10%;
+}
+
+.linkFavoritesButton {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.buttonVerMusicas:hover {
+  background-color: blue;
+}
